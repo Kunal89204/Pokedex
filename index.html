@@ -4,176 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          outline: none;
-          transition: 0.3s;
-        }
-  
-        body,
-        html {
-          height: 100vh;
-          width: 100vw;
-          overflow-x: hidden;
-        }
-  
-        .container {
-          border-color: red;
-          height: 100vh;
-          padding: 10px;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-        }
-  
-        .pokemon {
-          width: 18%;
-          padding: 10px;
-          border: 1px solid;
-          margin-top: 15px;
-          border-radius: 5px;
-          background-color: whitesmoke;
-        }
-
-        @media only screen and (max-width:900px) {
-          .pokemon{
-            width: 30%;
-          }
-        }
-
-        @media only screen and (max-width:525px) {
-          .pokemon{
-            width: 48%;
-          }
-        }
-  
-        .img {
-          text-align: center;
-        }
-  
-        .norm {
-          width: 10px;
-          height: 10px;
-          background-color: red;
-          border-radius: 50%;
-          display: inline-block;
-          cursor: pointer;
-        }
-  
-        .shiny {
-          width: 10px;
-          height: 10px;
-          background: linear-gradient(
-            200deg,
-            rgb(255, 0, 255),
-            rgb(0, 255, 234),
-            orange
-          );
-          border-radius: 50%;
-          display: inline-block;
-          cursor: pointer;
-        }
-      </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Pokemon Names List</h1>
-    
     <div class="container"></div>
 
-    <script>
-      for (let i = 0; i <= 500; i++) {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-          .then(function (respo) {
-            return respo.json();
-          })
-          .then(function (data) {
-            const container = document.querySelector(".container");
-
-            let pkmn = document.createElement("div");
-            pkmn.classList.add("pokemon");
-            let image = document.createElement("div");
-            image.classList.add("img");
-
-            let img = document.createElement("img");
-            pkmn.appendChild(image);
-            image.appendChild(img);
-
-            let norm = document.createElement("div");
-            norm.classList.add("norm");
-            let shiny = document.createElement("div");
-            shiny.classList.add("shiny");
-
-            image.appendChild(norm);
-            image.appendChild(shiny);
-
-            let id = document.createElement("p");
-            id.classList.add("id");
-            let name = document.createElement("p");
-            name.classList.add("name");
-            let height = document.createElement("p");
-            height.classList.add("height");
-            let weight = document.createElement("p");
-            weight.classList.add("weight");
-
-            pkmn.appendChild(id);
-            pkmn.appendChild(name);
-            pkmn.appendChild(height);
-            pkmn.appendChild(weight);
-
-            container.appendChild(pkmn);
-
-            // Calling Values from the api
-
-            img.src = data.sprites.front_default;
-          id.textContent = `Id: ${data.id}`;
-          name.textContent = `Name: ${data.name.toUpperCase()}`;
-          height.textContent = `Height: ${data.height}`;
-          weight.textContent = `Width: ${data.weight}`;
-
-
-          norm.addEventListener("click", function () {
-            img.src = data.sprites.front_default;
-
-            img.addEventListener("mouseover", function () {
-              img.src = data.sprites.back_default;
-            });
-
-            img.addEventListener("mouseout", function () {
-              img.src = data.sprites.front_default;
-            });
-          });
-
-
-          shiny.addEventListener("click", function () {
-            img.src = data.sprites.front_shiny;
-
-            img.addEventListener("mouseover", function () {
-              img.src = data.sprites.back_shiny;
-            });
-
-            img.addEventListener("mouseout", function () {
-              img.src = data.sprites.front_shiny;
-            });
-          });
-
-
-          img.addEventListener("mouseover", function () {
-            img.src = data.sprites.back_default;
-          });
-
-          img.addEventListener("mouseout", function () {
-            img.src = data.sprites.front_default;
-          });
-
-
-          })
-          .catch((error) => {
-            console.log("error", error);
-          });
-      }
-    </script>
+    <script src="fetch.js"></script>
   </body>
 </html>
