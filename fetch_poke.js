@@ -1,4 +1,4 @@
-for (let i = 1; i <= 50; i++) {
+for (let i = 1; i <= 800; i++) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
     .then(function (respo) {
       return respo.json();
