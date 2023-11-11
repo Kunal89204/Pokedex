@@ -1,116 +1,142 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    transition: 0.4s;
-    font-family: "Poppins", sans-serif;
-    color: white;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.4s;
+  font-family: "Poppins", sans-serif;
+  color: rgb(169, 167, 167);
+}
 
-  body,
-  html {
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-    background-color: rgb(10, 10, 10);
-  }
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: rgb(10, 10, 10);
+}
 
+/* Custom scrollbar */
 
-  header{
-    display: flex;
-    justify-content: space-around;
-  }
+body::-webkit-scrollbar {
+  width: 10px;
+}
 
-  
-  
-  h1{
-    /* text-align: center; */
-    background-color: transparent;
-    box-shadow: 0px 5px 10px 1px rgb(24, 24, 24);
-  }
-  
-  h1::first-letter{
-    color: rgb(153, 0, 255);
-    font-size: larger;
-  }
+body::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.085);
+}
 
-  input{
-    background-color: black;
-    width: 60vw;
-    padding: 5px;
-    border: 2px solid;
-    border-image: linear-gradient(45deg,rgb(255, 0, 204),rgb(0, 157, 255)) 10;;
-  
-  }
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(0, 217, 255), rgb(238, 0, 255));
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-  .search-box{
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 5px;
-  }
-  
-  .container {
-    border-color: red;
-    height: 100vh;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 10px;
+}
+
+h1 {
+  /* text-align: center; */
+  background-color: transparent;
+  box-shadow: 0px 5px 10px 1px rgb(24, 24, 24);
+}
+
+h1::first-letter {
+  color: rgb(153, 0, 255);
+  font-size: larger;
+}
+
+input {
+  background-color: black;
+  width: 60vw;
+  padding: 5px;
+  border: 0.13rem solid;
+  border-image: linear-gradient(45deg, rgb(255, 0, 204), rgb(0, 157, 255)) 10;
+}
+
+.search-box {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5px;
+}
+
+.container {
+  border-color: red;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pokemon {
+  width: 18%;
+  padding: 10px;
+  border: 2px solid;
+  margin-top: 20px;
+  background-color: black;
+  box-shadow: 0px 0px 5px 1px rgb(187, 0, 255);
+  border-image: linear-gradient(45deg, rgb(255, 0, 204), rgb(0, 157, 255)) 10;
+}
+
+.pokemon:hover {
+  cursor: pointer;
+  scale: 1.02;
+  box-shadow: 5px 5px 0px 1px rgb(187, 0, 255);
+}
+
+@media only screen and (max-width: 1055px) {
   .pokemon {
-    width: 18%;
-    padding: 10px;
-    border: 2px solid;
-    margin-top: 20px;
-    background-color: black;
-    box-shadow: 0px 0px 5px 1px rgb(187, 0, 255);
-    /* border-image: linear-gradient(45deg,rgb(0, 255, 81),rgb(0, 157, 255)) 10; */
-    border-image: linear-gradient(45deg,rgb(255, 0, 204),rgb(0, 157, 255)) 10;
+    width: 23%;
   }
+}
 
-  .pokemon:hover {
-    cursor: pointer;
-    scale: 1.02;
-    box-shadow: 5px 5px 0px 1px rgb(187, 0, 255);
+@media only screen and (min-width: 1500px) {
+  .pokemon {
+    width: 13.5%;
   }
+}
 
-  @media only screen and (max-width: 900px) {
-    .pokemon {
-      width: 30%;
-    }
+@media only screen and (max-width: 900px) {
+  .pokemon {
+    width: 30%;
   }
+}
 
-  @media only screen and (max-width: 525px) {
-    .pokemon {
-      width: 48%;
-    }
+@media only screen and (max-width: 580px) {
+  .pokemon {
+    width: 48%;
   }
+}
 
-  .img {
-    text-align: center;
-  }
+.img {
+  text-align: center;
+}
 
-  .norm {
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-  }
+.norm {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 2px;
+}
 
-  .shiny {
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(
-      200deg,
-      rgb(255, 0, 255),
-      rgb(0, 255, 234),
-      orange
-    );
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-  }
+.shiny {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(
+    200deg,
+    rgb(255, 0, 255),
+    rgb(0, 255, 234),
+    orange
+  );
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 2px;
+}

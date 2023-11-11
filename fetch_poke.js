@@ -79,41 +79,26 @@ for (let i = 1; i <= 200; i++) {
         img.src = data.sprites.front_default;
       });
 
-
       // Search function
 
-      let search = document.getElementById("search")
-      let pokemons = document.querySelectorAll(".pokemon")
+      let search = document.getElementById("search");
+      let pokemons = document.querySelectorAll(".pokemon");
 
       search.addEventListener("input", function () {
-        pokemons.forEach(pokemon => {
+        pokemons.forEach((pokemon) => {
           let input = search.value.toLowerCase();
-          let name = pokemon.querySelector(".name").textContent
+          let name = pokemon.querySelector(".name").textContent;
           if (name.toLowerCase().includes(input)) {
-            console.log(pokemon.querySelector(".name").textContent)
-            pokemon.style.display = "block"
-            pokemon.style.height = "fit-content"
+            console.log(pokemon.querySelector(".name").textContent);
+            pokemon.style.display = "block";
+            pokemon.style.height = "fit-content";
           } else {
-            pokemon.style.display = "none"
-
+            pokemon.style.display = "none";
           }
-
-
-        })
-
-
-
-      })
-
-
-
-
+        });
+      });
     })
     .catch((error) => {
       console.log("error", error);
     });
-
-
 }
-
-
